@@ -15,5 +15,6 @@ https://tailwindcss.com/docs/guides/laravel#mix
 
 J'ai suivi la procédure pour installer avec webpack.mix.js
 
-L'installation de tailwind survient dans le deuxième commit du dépôt git.
+L'installation de tailwind survient dans le deuxième et troisième commit du dépôt git.
 
+## Installation du restes des paquets vue vue-router vue-loader et axios :
