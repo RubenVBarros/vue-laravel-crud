@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Articles;
-use Database\Factories\ArticleFactory;
 use Illuminate\Database\Seeder;
 
 class ArticleSeeder extends Seeder
@@ -15,6 +14,8 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        Article::factory()->count(5)->create();
+        Articles::factory()
+            ->count(5)
+            ->create();
     }
 }
