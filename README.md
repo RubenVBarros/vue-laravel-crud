@@ -69,9 +69,32 @@ Il faut alors créer le seeder avec cette commande :
 
 Et nous allons créer une factory avec cette commande :
 
-`php arisan make:facory ArticleFactory`
+`php arisan make:facory ArticlesFactory`
 
 Pour populer notre base de donnée nous allons faire cette commande :
 
 `php artisan db:seed --class=ArticleSeeder`
+
+Dans la commande ci-dessus nous précisons que nous voulons populer en utilisant un seeder en particulier
+celui des ArticleSeeder
+
+Après avoir fait la commande nous obtenons un échantillon de résultats test qui sont dans la base de donnée.
+
+## Modification de api.php dans le dossier routes
+Nous ajoutns une ligne dans le fichier api.php qui contient les routes par rapport à notre API pour voir
+les différents résultats que l'on possède dans notre base de donnée.
+
+Nous rajoutons cette ligne :
+
+`Route::apiResource('articles', ArticleController::class);`
+
+Cela permet de retrouver sous l'url api/particles toutes les méthodes que nous avons définis
+dans notre controller ArticleController.
+
+## Lier VueJS au Projet
+Pour faire fonctionner VueJS au sein du projet il faut mettre dans le fichier webpack.mix.js
+cette fonction. `vue.js()`
+
+Nous pouvons maintenant créer nos composants VueJS dans notre projet. Dans mon cas j'ai crée un dossier
+<b><i>'components'</b></i> au sein du dossier <b><i>'resources/js'</i></b>
 
