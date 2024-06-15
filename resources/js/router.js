@@ -4,7 +4,7 @@ import DetailArticle from "./components/DetailArticle.vue";
 
 const routes = [
     { path: '/', component: ArticlesList },
-    { name: 'detail' ,path: '/detail/:id', component: DetailArticle}
+    { name: 'detail' ,path: '/articles/:id', component: DetailArticle}
     //ajouter les autres routes et autres composants
 ];
 

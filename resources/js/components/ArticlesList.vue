@@ -46,9 +46,9 @@ export default {
                     <td class="border border-slate-600">{{ article.categorie }}</td>
                     <td class="border border-slate-600">{{ article.image_url }}</td>
                     <td>
-                        <div class="btn-group" role="group">
+                        <div class="btn-group flex space-x-4" role="group">
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded" @click="deleteArticle(article.id)">Supprimer l'article</button>
-                            <router-link :to="{name: 'detail', params: { id: article.id }}" class="btn btn-success">Voir le détail</router-link>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-whhite font-bold px-4 py-2 rounded"> <router-link :to="{name: 'detail', params: { id: article.id }}" class="btn btn-success">Voir le détail</router-link> </button>
                         </div>
                     </td>
                 </tr>
