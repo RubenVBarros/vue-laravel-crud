@@ -91,10 +91,53 @@ Nous rajoutons cette ligne :
 Cela permet de retrouver sous l'url api/particles toutes les méthodes que nous avons définis
 dans notre controller ArticleController.
 
-## Lier VueJS au Projet
+## Lier VueJS au Projet et lier les différentes routes
 Pour faire fonctionner VueJS au sein du projet il faut mettre dans le fichier webpack.mix.js
 cette fonction. `vue.js()`
 
 Nous pouvons maintenant créer nos composants VueJS dans notre projet. Dans mon cas j'ai crée un dossier
 <b><i>'components'</b></i> au sein du dossier <b><i>'resources/js'</i></b>
+
+Il faut créer un fichier router.js sous <i><b>'resources/js'</b></i>
+Dans ce fichier nous allons mettre toutes les routes de notre application pour tout ce qui est
+front-end.
+
+Ainsi dans mon example en prenant la première url '/' cela reidirige vers mon composant qui sera
+chargé de voir tout les articles.
+
+il faut aussi rajouter cette partie du code 
+```
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+export default router;
+```
+Cette partie nous permet essentiellement de pouvoir utiliser le router dans un autre fichier en l'occurence on en aura
+besoin dans <b><i>'app.js'</i></b> et de renseigner que nous utilisons routes qui est un const que nous avons crée plus haut avec la liste
+des routes comme ceci :
+
+```
+const routes = [
+    { path: '/', component: ArticlesList }
+    //ajouter les autres routes et autres composants
+];
+```
+
+Dans router.js il faut aussi importer tout les composants que nous utilisons pour les routes
+comme ceci :
+
+```
+import ArticlesList from "./components/ArticlesList.vue";
+```
+
+Une fois que nous avons fini avec le <b><i>'router.js'</b></i>
+Il faut modifier app.js pour inclure le router et le fichier App.vue qui est le composant principal de l'application
+
+Dans le fichier on doit renseigner que on 'monte' l'application sur le composant App.vue et on utilise le router qui est
+le fichier router.js que nous avons crée précédement
+
+## Création du premier composant VueJS et changement
+J'ai commencé par créer un premier composant VueJS qui est la liste des Articles comme dit
+ci-dessus il a été crée sous <b><i>'resources/js/components'</b></i>
 
