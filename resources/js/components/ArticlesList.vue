@@ -48,12 +48,13 @@ export default {
                     <td>
                         <div class="btn-group flex space-x-4" role="group">
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded" @click="deleteArticle(article.id)">Supprimer l'article</button>
-                            <button class="bg-blue-500 hover:bg-blue-700 text-whhite font-bold px-4 py-2 rounded"> <router-link :to="{name: 'detail', params: { id: article.id }}" class="btn btn-success">Voir le détail</router-link> </button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"> <router-link :to="{name: 'detail', params: { id: article.id }}">Voir le détail</router-link> </button>
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </table>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded mt-10"> <router-link :to="{name: 'create'}"> Ajouter un article </router-link> </button>
         </div>
     </div>
 </template>

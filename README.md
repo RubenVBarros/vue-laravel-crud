@@ -123,6 +123,16 @@ const routes = [
     //ajouter les autres routes et autres composants
 ];
 ```
+Il est aussi possible de rajouter un nom pour définir une route en particulier et nous pouvons renseigner cela plus tard dans les composants Vue.js
+
+``{ name: 'detail', path: '/articles/:id', component: DetailArticle}`` <- Dans le fichier router.js
+
+``<router-link :to="{name: 'detail', params: { id: article.id }}">`` <- Dans le fichier du composant en l'occurence la dans <b><i>'ArticlesList.vue'</i></b> 
+
+
+Nous pouvons également définir directement l'url dans le router-link dans le composant .vue
+
+``<router-link :to="`/articles/create`">``
 
 Dans router.js il faut aussi importer tout les composants que nous utilisons pour les routes
 comme ceci :
@@ -141,3 +151,13 @@ le fichier router.js que nous avons crée précédement
 J'ai commencé par créer un premier composant VueJS qui est la liste des Articles comme dit
 ci-dessus il a été crée sous <b><i>'resources/js/components'</b></i>
 
+Au niveau des composants j'ai crée un composant pour le détail des articles <i><b>'DetailArticle.vue'</b></i> pour voir en particulier
+un article, j'ai crée un composant ou l'on voit tout les articles disponibles dans la base de données <i><b>'ArticlesList.vue'</b></i>
+et j'ai crée un composant qui agit comme un formulaire et qui fait la création d'un article et la modification de celui-ci.
+
+Sur la liste des articles disponibles il est possible de supprimer directement un article ou de voir le détail de celui-ci,
+pour modifier un article il faut voir le détail de l'article et nous pouvons ensuite le modifier.
+
+A partir de la nous avons tout les composants Vue pour fair fonctionner le projet, il ne reste plus qu'à faire le CSS.
+
+Le reste n'est que du bonus (pagination,login et register)

@@ -32,6 +32,7 @@ export default {
 
             <h5>URL de l'image : </h5>
             <p>{{article.image_url}}</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"> <router-link :to="{name: 'edit', params: { id: article.id }}">Modifier l'article</router-link> </button>
         </div>
     </div>
 </template>
