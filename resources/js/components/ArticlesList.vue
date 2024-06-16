@@ -23,38 +23,24 @@ export default {
 </script>
 
 <template>
-    <div class="flex justify-center">
+    <div class="bg-blue-200 min-h-screen flex justify-center items-center">
         <div class="mt-5">
-            <h1 class="mt-3 underline font-bold">Liste des Articles</h1>
-            <table class="justify-center border border-separate border-black border-8 border-spacing-2">
-                <thead>
-                <tr>
-                    <th class="border border-slate-600">Id de l'article</th>
-                    <th class="border border-slate-600">Titre</th>
-                    <th class="border border-slate-600">Description</th>
-                    <th class="border border-slate-600">Catégorie</th>
-                    <th class="border border-slate-600">URL de l'image</th>
-                    <th class="border border-slate-600">Actions</th>
-                    <!-- <th>Actions</th> -->
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="article in articles" :key="article.id">
-                    <td class="border border-slate-600">{{article.id}}</td>
-                    <td class="border border-slate-600">{{ article.titre }}</td>
-                    <td class="border border-slate-600">{{ article.description }}</td>
-                    <td class="border border-slate-600">{{ article.categorie }}</td>
-                    <td class="border border-slate-600">{{ article.image_url }}</td>
-                    <td>
+            <h1 class="font-bold text-center text-blue-400 text-2xl uppercase mb-20">Liste des Articles</h1>
+            <div class="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
+                <div class="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3">
+                    <div class="p-6" v-for="article in articles" :key="article.id">
+                        <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" :src="article.image_url"/>
+
+                        <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">{{article.titre}}</h1>
+                        <p class="mx-auto text-base leading-relaxed text-gray-500">{{article.description}}</p>
                         <div class="btn-group flex space-x-4" role="group">
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded" @click="deleteArticle(article.id)">Supprimer l'article</button>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"> <router-link :to="{name: 'detail', params: { id: article.id }}">Voir le détail</router-link> </button>
                         </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded mt-10"> <router-link :to="{name: 'create'}"> Ajouter un article </router-link> </button>
+                    </div>
+                </div>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded mb-10"> <router-link :to="{name: 'create'}"> Ajouter un article </router-link> </button>
         </div>
     </div>
 </template>
