@@ -1,3 +1,13 @@
+# Sommaire
+1. [Procédure d'installation du projet](#procédure-dinstallation-du-projet)
+2. [Installation de TailwindCSS](#installation-de-tailwind-css)
+3. [Installation du reste des paquets vue vue-router vue-loader et axios](#installation-du-reste-des-paquets-vue-vue-router-vue-loader-et-axios)
+4. [Création de la table Article](#création-de-la-table-article)
+5. [Création du controller, du seeder et de la factory](#création-du-controller-du-seeder-et-de-la-factory)
+6. [Modification de api.php dans le dossier routes](#modification-de-apiphp-dans-le-dossier-routes)
+7. [Lier VueJS au projet et lier les différentes routes](#lier-vuejs-au-projet-et-lier-les-différentes-routes)
+8. [Création du premier composant VueJS et changement](#création-du-premier-composant-vuejs-et-changement)
+
 ## Procédure d'installation du projet
 Tout d'abord il faut préciser que ce projet a été fait sous windows en utilisant <b>webpack.mix.js</b>
 et en utilisant <b>Xampp</b> comme serveur local et on utilse <b>MySQL</b> pour la base de donnée
@@ -8,7 +18,7 @@ Le tout premier commit correspond au code de base en faisant la commande :
 
 Comme indiqué dans les instructions fournis dans le mail
 
-## Installation de Tailwind CSS :
+## Installation de Tailwind CSS
 J'ai installé TailwindCSS comme indiqué dans le tutoriel sur le site de Tailwind à cette adresse :
 
 https://tailwindcss.com/docs/guides/laravel#mix
@@ -17,7 +27,7 @@ J'ai suivi la procédure pour installer avec webpack.mix.js
 
 L'installation de tailwind survient dans le deuxième et troisième commit du dépôt git.
 
-## Installation du reste des paquets vue vue-router vue-loader et axios :
+## Installation du reste des paquets vue vue-router vue-loader et axios
 On a juste à faire ces commandes :
 
 `npm install vue`
@@ -91,7 +101,7 @@ Nous rajoutons cette ligne :
 Cela permet de retrouver sous l'url api/particles toutes les méthodes que nous avons définis
 dans notre controller ArticleController.
 
-## Lier VueJS au Projet et lier les différentes routes
+## Lier VueJS au projet et lier les différentes routes
 Pour faire fonctionner VueJS au sein du projet il faut mettre dans le fichier webpack.mix.js
 cette fonction. `vue.js()`
 
