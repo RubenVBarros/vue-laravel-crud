@@ -42,10 +42,10 @@ export default {
 
 <template>
     <div class="bg-blue-200 min-h-screen flex items-center">
-        <div class="w-full">
+        <div class="mt-5 w-full">
             <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-20" v-if="newArticle">Ajouter un article</h2>
             <h2 class="text-center text-blue-400 font-bold text-2xl uppercase mb-20" v-else>Modifier un article</h2>
-            <div class="bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg-w-1/2">
+            <div class="bg-white p-10 rounded-lg shadow  mx-auto w-3/4 mb-10">
                 <form @submit.prevent="submitForm">
                     <div class="mb-5">
                         <label for="name" class="block mb-2 font-bold text-gray-600">Titre : </label>

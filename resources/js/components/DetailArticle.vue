@@ -13,26 +13,35 @@ export default {
         async getArticle(){
             const response = await axios.get(`/api/articles/${this.$route.params.id}`)
             this.article = response.data;
+            this.article.created_at = new Date(response.data.created_at)//on redéfinit la date
         }
     }
 }
 </script>
 
 <template>
-    <div class="flex justify-center">
+    <div class="bg-blue-200 min-h-screen flex justify-center">
         <div class="mt-5">
-            <h5>Titre : </h5>
-            <h6>{{article.titre}}</h6>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <!-- Blog post header -->
+                    <div class="py-8">
+                        <h1 class="text-3xl text-blue-400 font-bold mb-2 uppercase">{{article.titre}}</h1>
+                        <p class="text-gray-500 text-sm">Publié le : {{article.created_at.getDate() + '/' + (article.created_at.getMonth()+1) + '/' +  article.created_at.getFullYear()}}</p>
+                        <p >Dans la catégorie : {{article.categorie}}</p>
+                    </div>
 
-            <h5>Description : </h5>
-            <p>{{article.description}}</p>
+                    <!-- Featured image -->
+                    <img class="w-full h-auto mb-9 rounded" :src="article.image_url"/>
 
-            <h5>Catégorie : </h5>
-            <p>{{article.categorie}}</p>
+                    <!-- Blog post content -->
+                    <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+                        <p>{{article.description}}</p>
+                    </div>
 
-            <h5>URL de l'image : </h5>
-            <p>{{article.image_url}}</p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"> <router-link :to="{name: 'edit', params: { id: article.id }}">Modifier l'article</router-link> </button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded mt-10 mb-10"> <router-link :to="{name: 'edit', params: { id: article.id }}">Modifier l'article</router-link> </button>
+                </div>
+            </div>
         </div>
     </div>
 </template>

@@ -31,9 +31,9 @@ export default {
                     <div class="p-6" v-for="article in articles" :key="article.id">
                         <img class="object-cover object-center w-full mb-8 lg:h-48 md:h-36 rounded-xl" :src="article.image_url"/>
 
-                        <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">{{article.titre}}</h1>
+                        <h1 class="mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl">{{article.titre}}</h1>
                         <p class="mx-auto text-base leading-relaxed text-gray-500">{{article.description}}</p>
-                        <div class="btn-group flex space-x-4" role="group">
+                        <div class="btn-group flex space-x-4 mt-10 justify-center" role="group">
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold px-4 py-2 rounded" @click="deleteArticle(article.id)">Supprimer l'article</button>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"> <router-link :to="{name: 'detail', params: { id: article.id }}">Voir le détail</router-link> </button>
                         </div>

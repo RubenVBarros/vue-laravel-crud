@@ -20914,7 +20914,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
             case 2:
               response = _context.sent;
               _this.article = response.data;
-            case 4:
+              _this.article.created_at = new Date(response.data.created_at); //on redéfinit la date
+            case 5:
             case "end":
               return _context.stop();
           }
@@ -21076,13 +21077,13 @@ var _hoisted_5 = {
 };
 var _hoisted_6 = ["src"];
 var _hoisted_7 = {
-  "class": "mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl"
+  "class": "mx-auto mb-8 text-2xl font-semibold leading-none tracking-tighter text-black lg:text-3xl"
 };
 var _hoisted_8 = {
   "class": "mx-auto text-base leading-relaxed text-gray-500"
 };
 var _hoisted_9 = {
-  "class": "btn-group flex space-x-4",
+  "class": "btn-group flex space-x-4 mt-10 justify-center",
   role: "group"
 };
 var _hoisted_10 = ["onClick"];
@@ -21147,21 +21148,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "flex justify-center"
+  "class": "bg-blue-200 min-h-screen flex justify-center"
 };
 var _hoisted_2 = {
   "class": "mt-5"
 };
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Titre : ", -1 /* HOISTED */);
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Description : ", -1 /* HOISTED */);
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "Catégorie : ", -1 /* HOISTED */);
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, "URL de l'image : ", -1 /* HOISTED */);
+var _hoisted_3 = {
+  "class": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+};
+var _hoisted_4 = {
+  "class": "max-w-3xl mx-auto"
+};
+var _hoisted_5 = {
+  "class": "py-8"
+};
+var _hoisted_6 = {
+  "class": "text-3xl text-blue-400 font-bold mb-2 uppercase"
+};
 var _hoisted_7 = {
-  "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded"
+  "class": "text-gray-500 text-sm"
+};
+var _hoisted_8 = ["src"];
+var _hoisted_9 = {
+  "class": "prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto"
+};
+var _hoisted_10 = {
+  "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded mt-10 mb-10"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h6", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.titre), 1 /* TEXT */), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.description), 1 /* TEXT */), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.categorie), 1 /* TEXT */), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.image_url), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Blog post header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.titre), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, "Publié le : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.created_at.getDate() + '/' + ($data.article.created_at.getMonth() + 1) + '/' + $data.article.created_at.getFullYear()), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Dans la catégorie : " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.categorie), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Featured image "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    "class": "w-full h-auto mb-9 rounded",
+    src: $data.article.image_url
+  }, null, 8 /* PROPS */, _hoisted_8), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Blog post content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.article.description), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
       name: 'edit',
       params: {
@@ -21173,7 +21192,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Modifier l'article")];
     }),
     _: 1 /* STABLE */
-  }, 8 /* PROPS */, ["to"])])])]);
+  }, 8 /* PROPS */, ["to"])])])])])]);
 }
 
 /***/ }),
@@ -21195,7 +21214,7 @@ var _hoisted_1 = {
   "class": "bg-blue-200 min-h-screen flex items-center"
 };
 var _hoisted_2 = {
-  "class": "w-full"
+  "class": "mt-5 w-full"
 };
 var _hoisted_3 = {
   key: 0,
@@ -21206,7 +21225,7 @@ var _hoisted_4 = {
   "class": "text-center text-blue-400 font-bold text-2xl uppercase mb-20"
 };
 var _hoisted_5 = {
-  "class": "bg-white p-10 rounded-lg shadow md:w-3/4 mx-auto lg-w-1/2"
+  "class": "bg-white p-10 rounded-lg shadow mx-auto w-3/4 mb-10"
 };
 var _hoisted_6 = {
   "class": "mb-5"
